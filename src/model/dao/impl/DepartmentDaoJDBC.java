@@ -49,14 +49,10 @@ public class DepartmentDaoJDBC implements DepartmentDao{
 			st.setInt(1, id);
 			rs = st.executeQuery();
 			if (rs.next()) {
-				Department dep = new Department();
-				dep.setId(rs.getInt("Id"));
-				dep.setName(rs.getString("Name"));
-				Seller obj = new Seller();
+				Department obj = new Department();
 				obj.setId(rs.getInt("Id"));
 				obj.setName(rs.getString("Name"));
-				obj.setDepartment(dep);
-				return dep;
+				return obj;
 			}
 			return null;
 		}
